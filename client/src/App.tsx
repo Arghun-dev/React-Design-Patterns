@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Layout from "./Layout";
 
 import SplitScreen from "./LayoutComponents/SplitScreen/SplitScreen";
@@ -12,6 +14,8 @@ import { people } from "./LayoutComponents/Lists/data";
 import Modal from "./LayoutComponents/Modal/Modal";
 
 function App() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <Layout>
       <SplitScreen leftWeight={1} rightWeight={3}>
@@ -36,7 +40,7 @@ function App() {
       </div>
 
       <div>
-        <Modal>
+        <Modal showModal={showModal} setShowModal={setShowModal}>
           <div>This is My Modal component</div>
         </Modal>
       </div>

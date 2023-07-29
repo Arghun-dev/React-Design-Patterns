@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styled from "styled-components";
 import { animated, useSpring, SpringConfig } from "@react-spring/web";
 
@@ -40,11 +39,11 @@ const springConfig: SpringConfig = {
 
 interface ModalProps {
   children: React.ReactElement;
+  showModal: boolean;
+  setShowModal: React.Dispatch<boolean>;
 }
 
-const Modal = ({ children }: ModalProps) => {
-  const [showModal, setShowModal] = useState(false);
-
+const Modal = ({ children, showModal, setShowModal }: ModalProps) => {
   const modalBgAnimation = useSpring({
     opacity: showModal ? 1 : 0,
     display: showModal ? "block" : "none",
