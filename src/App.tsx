@@ -9,6 +9,8 @@ import SmallPersonListItem from "./LayoutComponents/Lists/people/SmallPersonList
 import LargePersonListItem from "./LayoutComponents/Lists/people/LargePersonListItem";
 import { people } from "./LayoutComponents/Lists/data";
 
+import Modal from "./LayoutComponents/Modal/Modal";
+
 function App() {
   return (
     <Layout>
@@ -31,6 +33,12 @@ function App() {
           items={people}
           ItemComponent={LargePersonListItem}
         />
+      </div>
+
+      <div>
+        <Modal>
+          <div>This is My Modal component</div>
+        </Modal>
       </div>
     </Layout>
   );
