@@ -17,6 +17,8 @@ import User from "./HOC/User";
 import { printProps } from "./HOC/printProps";
 import { withUser } from "./HOC/withUser";
 
+import Products from "./hooks/Products";
+
 const UserWithProps = printProps(User);
 const UserWithUser = withUser(User, "2");
 
@@ -60,6 +62,11 @@ function App() {
 
         <h3>User With User and Props</h3>
         <UserWithPropsAndUser test="a" />
+      </div>
+
+      <div>
+        <h3>Hooks Pattern</h3>
+        <Products />
       </div>
     </Layout>
   );

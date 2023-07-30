@@ -62,6 +62,10 @@ app.get("/users/:id", (req: Request, res: Response) => {
   res.json(foundedUser);
 });
 
+app.get("/products", (req: Request, res: Response) => {
+  res.json({ products });
+});
+
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
 });
