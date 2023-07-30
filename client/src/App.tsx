@@ -13,6 +13,15 @@ import { people } from "./LayoutComponents/Lists/data";
 
 import Modal from "./LayoutComponents/Modal/Modal";
 
+import User from "./HOC/User";
+import { printProps } from "./HOC/printProps";
+import { withUser } from "./HOC/withUser";
+
+const UserWithProps = printProps(User);
+const UserWithUser = withUser(User, "2");
+
+const UserWithPropsAndUser = printProps(UserWithUser);
+
 function App() {
   const [showModal, setShowModal] = useState(false);
 
@@ -43,6 +52,14 @@ function App() {
         <Modal showModal={showModal} setShowModal={setShowModal}>
           <div>This is My Modal component</div>
         </Modal>
+      </div>
+
+      <div>
+        <h3>User With Props</h3>
+        <UserWithProps name="arghun" age={28} />
+
+        <h3>User With User and Props</h3>
+        <UserWithPropsAndUser test="a" />
       </div>
     </Layout>
   );
